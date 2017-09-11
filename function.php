@@ -17,6 +17,9 @@ echo '$global_passed2: ' . $global_passed2 . '<br />' . PHP_EOL;
 function functionScope($passed1, &$passed2)
 {
     echo 'INSIDE FUNCTION' . '<br />' . PHP_EOL;
+    static $static = 0;
+    echo 'static=' . $static . '<br />' . PHP_EOL;
+    $static++;
     //extract($GLOBALS);
     global $new_number;
     $new_number = 1;

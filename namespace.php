@@ -3,7 +3,7 @@
 include 'ClassScope.php';
 include 'NamespaceScope.php';
 
-use \sketchings\oop;
+use \sketchings\oop\NamespaceScopeB as blah;
 
 echo "STATIC CALL ClassScopeA" . '<br />' . PHP_EOL;
 echo 'ClassScopeA::$class_number4: ' . ClassScopeA::$class_number4 . '<br />' . PHP_EOL;
@@ -17,7 +17,7 @@ echo '$classA::$class_number4: ' . $classA::$class_number4 . '<br />' . PHP_EOL;
 //echo '$classA->class_number5: ' . $classA->class_number5 . '<br />' . PHP_EOL;
 //echo '$classA->class_number6: ' . $classA->class_number6 . '<br />' . PHP_EOL;
 
-$classB = new oop\NamespaceScopeB();
+$classB = new blah();
 echo "FROM classB Object" . '<br />' . PHP_EOL;
 
 $classB->displayProperties();

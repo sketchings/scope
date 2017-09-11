@@ -3,7 +3,7 @@
 include 'ClassScope.php';
 
 echo "STATIC CALL ClassScopeA" . '<br />' . PHP_EOL;
-echo 'ClassScopeA::$class_number4: ' . ClassScopeA::$class_number4 . '<br />' . PHP_EOL;
+echo 'ClassScopeAx$class_number4: ' . ClassScopeA::$class_number4 . '<br />' . PHP_EOL;
 
 $classA = new ClassScopeA();
 
@@ -20,3 +20,5 @@ echo "FROM classB Object" . '<br />' . PHP_EOL;
 
 var_dump($classB);
 $classB->displayProperties();
+ClassScopeA::staticFunction();
+ClassScopeB::staticFunction();

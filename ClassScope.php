@@ -1,13 +1,39 @@
 <?php
-
-class ClassScopeA
+abstract class AbstractScope
 {
+    const CLASS_CONSTANT = 'class constant';
+
+    public $abstract_number1 = 101;
+    protected $abstract_number2 = 201;
+    private $abstract_number3 = 301;
+
+    public function addPassed($var)
+    {
+        $var++;
+        return $var;
+    }
+
+    abstract protected function protectedMethod();
+    abstract public function publicMethod();
+}
+
+class ClassScopeA extends AbstractScope
+{
+    const CLASS_CONSTANT = 'class constant';
     public $class_number1 = 100;
     private $class_number2 = 200;
     protected $class_number3 = 300;
     public static $class_number4 = 400;
     protected static $class_number5 = 500;
     private static $class_number6 = 600;
+
+    protected function protectedMethod(){
+        echo 'Protected Method';
+    }
+
+    public function publicMethod(){
+        echo 'Public Method';
+    }
 
     public function addPassed($var)
     {
@@ -68,7 +94,12 @@ class ClassScopeA
         //echo 'static::$class_number3: ' . static::$class_number3 . '<br />' . PHP_EOL;
         echo 'static::$class_number4: ' . static::$class_number4 . '<br />' . PHP_EOL;
         echo 'static::$class_number5: ' . static::$class_number5 . '<br />' . PHP_EOL;
-        echo 'static::$class_number6: ' . static::$class_number6 . '<br />' . PHP_EOL;
+        //echo 'static::$class_number6: ' . static::$class_number6 . '<br />' . PHP_EOL;
+    }
+
+    public static function staticFunction()
+    {
+        echo "Parent STATIC FUNCTION";
     }
 }
 
@@ -83,8 +114,9 @@ class ClassScopeB extends ClassScopeA
     protected static $class_number5 = 5000;
     private static $class_number6 = 6000;
 
-    public static function statusFunction()
+    public static function staticFunction()
     {
         echo "IN STATIC FUNCTION";
+        parent::staticFunction();
     }
 }

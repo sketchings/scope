@@ -1,9 +1,6 @@
 <?php
 // class scope
-require "src/AbstractScope.php";
-require "src/ClassScopeA.php";
-//AbstractScope required here will not be usable in ClassScopeA
-require "src/ClassScopeB.php";
+require __DIR__ . '/vendor/autoload.php';
 
 echo "STATIC CALL ClassScopeA" . '<br />' . PHP_EOL;
 echo 'ClassScopeA $staticvar: ' . ClassScopeA::$staticvar . '<br />' . PHP_EOL;

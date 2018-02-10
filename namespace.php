@@ -1,23 +1,15 @@
 <?php
 // class scope
-include 'ClassScope.php';
-include 'NamespaceScope.php';
+require __DIR__ . '/vendor/autoload.php';
 
-use \sketchings\oop\NamespaceScopeB as blah;
+$classA = new \sketchings\scope\NamespaceScopeA();
+echo "FROM NamespaceScopeA Object" . '<br />' . PHP_EOL;
+var_dump($classA);
+$classA->displayProperties();
 
-echo "STATIC CALL ClassScopeA" . '<br />' . PHP_EOL;
-echo 'ClassScopeA::$class_number4: ' . ClassScopeA::$class_number4 . '<br />' . PHP_EOL;
-
-$classA = new \sketchings\oop\NamespaceScopeA();
-echo "FROM classA Object" . '<br />' . PHP_EOL;
-echo '$classA->class_number1: ' . $classA->class_number1 . '<br />' . PHP_EOL;
-//echo '$classA->class_number2: ' . $classA->class_number2 . '<br />' . PHP_EOL;
-//echo '$classA->class_number3: ' . $classA->class_number3 . '<br />' . PHP_EOL;
-echo '$classA::$class_number4: ' . $classA::$class_number4 . '<br />' . PHP_EOL;
-//echo '$classA->class_number5: ' . $classA->class_number5 . '<br />' . PHP_EOL;
-//echo '$classA->class_number6: ' . $classA->class_number6 . '<br />' . PHP_EOL;
+use \sketchings\scope\NamespaceScopeB as blah;
 
 $classB = new blah();
-echo "FROM classB Object" . '<br />' . PHP_EOL;
-
+echo "FROM NamespaceScopeB Object" . '<br />' . PHP_EOL;
+var_dump($classB);
 $classB->displayProperties();

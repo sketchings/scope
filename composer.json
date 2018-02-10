@@ -1,0 +1,22 @@
+{
+    "name": "sketchings/scope",
+    "authors": [
+        {
+            "name": "Alena Holligan",
+            "email": "alena@holligan.us"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "sketchings\\":"src/"
+        },
+        "classmap": [
+            "src/ClassScopeA.php",
+            "src/AbstractScope.php",
+            "src/ClassScopeB.php",
+            "src/FirstInterface.php",
+            "src/SecondInterface.php",
+            "src/InterfaceClass.php"
+        ]
+    }
+}
